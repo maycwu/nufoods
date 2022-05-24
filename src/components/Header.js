@@ -128,6 +128,14 @@ function Header() {
           <img src={Logo} className='w-8 object-cover' alt='logo' />
           <p className='text-headingColor text-xl font-bold'>City</p>
         </Link>
+        <div className='flex justify-evenly w-40'>
+        <div className='relative flex items-center justify-center'>
+            <MdShoppingBasket className='text-textColor text-2xl cursor-pointer' />
+            <div className='absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center'>
+              <p className='text-xs text-white font-semibold'>2</p>
+            </div>
+          </div>
+          
         <div className='relative'>
           <motion.img
             whileTap={{ scale: 0.6 }}
@@ -192,6 +200,7 @@ function Header() {
               </p>
             </motion.div>
           )}
+        </div>
         </div>
       </div>
     </header>
