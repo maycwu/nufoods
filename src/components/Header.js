@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import Avatar from '../img/avatar.png';
@@ -8,13 +8,13 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { app } from '../firebase.config';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
-import {StateContext} from '../context/StateProvider'
+import { StateContext } from '../context/StateProvider';
 
 function Header() {
   const firebaseAuth = getAuth(app);
   const provider = new GoogleAuthProvider();
-  
-  //another way of writing it without custom hook 
+
+  //another way of writing it without custom hook
   // const [{ user }, dispatch] = useContext(StateContext)
 
   const [{ user }, dispatch] = useStateValue();
@@ -23,11 +23,12 @@ function Header() {
     const {
       user: { refreshToken, providerData },
     } = await signInWithPopup(firebaseAuth, provider);
-    
+
     dispatch({
       type: actionType.SET_USER,
       user: providerData[0],
     });
+    localStorage.setItem('user', JSON.stringify(providerData[0]))
   };
   return (
     <header className='fixed z-50 w-screen p-6 px-16'>
@@ -63,8 +64,8 @@ function Header() {
           <div className='relative'>
             <motion.img
               whileTap={{ scale: 0.6 }}
-              src={Avatar}
-              className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer'
+              src={user ? user.photoURL : Avatar}
+              className='w-10 min-w-[40px] h-10 min-h-[40px] drop-shadow-xl cursor-pointer rounded-full'
               alt='userprofile'
               onClick={login}
             />
