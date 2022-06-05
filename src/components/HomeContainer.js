@@ -1,6 +1,7 @@
 import React from "react";
 import Delivery from "../img/delivery.png";
 import HeroBg from "../img/heroBg.png";
+import I1 from '../img/i1.png'
 
 function homeContainer() {
   return (
@@ -39,10 +40,17 @@ function homeContainer() {
           Order Now!
         </button>
       </div>
-      <div className="py-2 flex-1 flex items-center">
+      <div className="py-2 flex-1 flex items-center relative">
         <img src={HeroBg} className="ml-auto h-400 w-full lg:w-auto lg:h-650 " alt="hero-bg" />
-        <div className="w-full h-full absolute flex items-center justify-center">
 
+        <div className="w-full h-full absolute top-0 left-0 flex items-center justify-center ">
+            <div className="w-190 p-2 bg-cardOverlay backdrop-blur-md rounded-3xl p-4 flex items-center justify-center flex-col">
+                <img src={I1} alt="I1" className="w-40 -mt-20 " />
+                <p className="text-lg font-semibold text-TextColor mt-4"> Icecream </p>
+                <p className="text-sm text-lighttextGray font-semibold my-3">Chocolate Vanilla</p>
+                <p className="text-md font-semibold text-headingColor">
+                    <span className="text-sm text-red-600">$</span>5.25</p>
+            </div>
         </div>
       </div>
     </section>
