@@ -20,9 +20,9 @@ function homeContainer() {
           </div>
         </div>
 
-        <p className='text-[2.5rem] lg:text-[3.8rem] font-bold tracking-wide text-headingColor'>
+        <p className='text-[2rem] lg:text-[3.8rem] font-bold tracking-wide text-headingColor'>
           The Fastest Delivery in{' '}
-          <span className='text-orange-600 text-[3rem] lg:text-[4.5rem]'>
+          <span className='text-orange-600 text-[2rem] lg:text-[4.5rem]'>
             Your City
           </span>
         </p>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../img/logo.png';
+import Logo from '../img/logo1.png';
 import Avatar from '../img/avatar.png';
 import { MdShoppingBasket, MdAdd, MdLogout } from 'react-icons/md';
 import { motion } from 'framer-motion';
@@ -47,12 +47,12 @@ function Header() {
   };
 
   return (
-    <header className='fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16 bg-primary'>
+    <header className='fixed z-50 w-screen p-5 px-4 md:p-6 md:pr-16 bg-primary'>
       {/*desktop & tablet*/}
       <div className='hidden md:flex w-full h-full items-center justify-between'>
-        <Link to={'/'} className='flex items-center gap-2'>
-          <img src={Logo} className='w-8 object-cover' alt='logo' />
-          <p className='text-headingColor text-xl font-bold'>City</p>
+        <Link to={'/'} className='flex items-center'>
+          <img src={Logo} className='w-24 h-14 object-cover' alt='logo' />
+          <p className='text-headingColor text-xl font-bold'>NuFoods</p>
         </Link>
 
         <div className='flex items-center gap-8'>
@@ -139,8 +139,8 @@ function Header() {
       {/*mobile*/}
       <div className='flex items-center justify-between md:hidden w-full h-full'>
         <Link to={'/'} className='flex items-center gap-2'>
-          <img src={Logo} className='w-8 object-cover' alt='logo' />
-          <p className='text-headingColor text-xl font-bold'>City</p>
+          <img src={Logo} className='w-16 h-10 object-cover' alt='logo' />
+          <p className='text-headingColor text-xl font-bold'>NuFoods</p>
         </Link>
         <div className='flex justify-evenly w-40'>
           <div className='relative flex items-center justify-center'>
