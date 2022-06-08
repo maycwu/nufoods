@@ -1,7 +1,7 @@
 import React from 'react';
 import Delivery from '../img/delivery.png';
 import HeroBg from '../img/heroBg.png';
-import { heroData } from '../utils/data';
+import { homeData } from '../utils/data';
 
 function homeContainer() {
   return (
@@ -48,8 +48,8 @@ function homeContainer() {
         />
 
         <div className='w-full h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-4 flex-wrap'>
-          {heroData &&
-            heroData.map((n) => (
+          {homeData &&
+            homeData.map((n) => (
               <div
                 key={n.id}
                 className='lg:w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col drop-shadow-md'
