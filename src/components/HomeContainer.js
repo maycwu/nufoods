@@ -20,15 +20,19 @@ function homeContainer() {
           </div>
         </div>
 
-        <p className='text-[2rem] lg:text-[3.8rem] font-bold tracking-wide text-headingColor'>
-          The Fastest Delivery in{' '}
-          <span className='text-orange-600 text-[2rem] lg:text-[4.5rem]'>
-            Your City
+        <p className='text-[2rem] lg:text-[3rem] font-bold tracking-wide text-headingColor'>
+          Because you don't need to give up deliciousness for...
+          <br/>
+          <span className='text-orange-600 text-[2rem] lg:text-[4rem]'>
+           Healthiness
           </span>
         </p>
         <p className='text-base text-textColor text-center md:text-left md:w-[80%]'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
           assumenda laborum reprehenderit cum explicabo consequuntur iusto quam
+          facere, facilis numquam corrupti, corporis rerum iure debitis vero
+          sunt aspernatur repellendus deleniti.
+          Distinctio assumenda laborum reprehenderit cum explicabo consequuntur iusto quam
           facere, facilis numquam corrupti, corporis rerum iure debitis vero
           sunt aspernatur repellendus deleniti.
         </p>
@@ -47,7 +51,7 @@ function homeContainer() {
           alt='hero-bg'
         />
 
-        <div className='w-full h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-4 flex-wrap'>
+        <div className='w-[100%] h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-4 flex-wrap'>
           {homeData &&
             homeData.map((n) => (
               <div

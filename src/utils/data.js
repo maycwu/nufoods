@@ -1,36 +1,44 @@
-import I1 from '../img/i1.png';
-import F1 from '../img/f1.png';
-import C3 from '../img/c3.png';
-import Fi1 from '../img/fi1.png';
+import H25 from '../img/h25.png';
+import H7 from '../img/h7.png';
+import H12 from '../img/h12.png';
+import H18 from '../img/h18.png';
+import H20 from '../img/h20.png';
 
 export const homeData = [
   {
     id: 1,
-    name: 'Ice cream',
-    desc: 'Chocolate & Vanilla',
-    price: '5.25',
-    imageSrc: I1,
+    name: 'Avocado Toast',
+    desc: 'Toasted w/ Egg',
+    price: '10.50',
+    imageSrc: H25,
   },
   {
     id: 2,
-    name: 'Strawberries',
-    desc: 'Fresh Strawberry',
-    price: '10.25',
-    imageSrc: F1,
+    name: 'Green Smoothie',
+    desc: 'Kale, Kiwi & Orange',
+    price: '5.25',
+    imageSrc: H7,
   },
   {
     id: 3,
-    name: 'Chicken Kebab',
-    desc: 'Mixed Kebab Plate',
+    name: 'Acai Bowl',
+    desc: 'Strawberry & Banana',
     price: '8.25',
-    imageSrc: C3,
+    imageSrc: H12,
   },
   {
     id: 4,
-    name: 'Fish Kebab',
-    desc: 'Mixed Fished Kebab',
-    price: '5.25',
-    imageSrc: Fi1,
+    name: 'Salmon Platter',
+    desc: 'Mixed w/ veggies',
+    price: '12.00',
+    imageSrc: H18,
+  },
+  {
+    id: 5,
+    name: 'Chicken Platter',
+    desc: 'Mixed w/ veggies',
+    price: '10.00',
+    imageSrc: H20,
   },
 ];
 
