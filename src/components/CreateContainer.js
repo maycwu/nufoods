@@ -17,6 +17,9 @@ import {
 } from 'firebase/storage';
 import { storage } from '../firebase.config';
 import { saveItem } from '../utils/firebaseFunctions';
+import { useStateValue } from '../context/StateProvider';
+import { getAllFoodItems } from '../utils/firebaseFunctions';
+import { actionType } from '../context/reducer';
 
 function CreateContainer() {
   const [title, setTitle] = useState('');
@@ -28,6 +31,7 @@ function CreateContainer() {
   const [msg, setMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [imageAsset, setImageAsset] = useState(null);
+  const [{ foodItems }, dispatch] = useStateValue(); // foodItems is the object state with the list of food, if you want to use it to render it's properties in the return statement, i.e "foodItems.price" etc you must add it in the useStateValue hook (custom hook)
 
   const uploadImage = (e) => {
     setIsLoading(true);
@@ -104,7 +108,7 @@ function CreateContainer() {
         saveItem(data);
         setFields(true);
         setIsLoading(false);
-        setMsg('Image deleted successfully');
+        setMsg('Image saved successfully');
         setAlertStatus('success');
         setTimeout(() => {
           setFields(false);
@@ -129,6 +133,15 @@ function CreateContainer() {
     setCategory('Select Category');
     setPrice('');
     setCalories('');
+  };
+
+  const fetchData = async () => {
+    await getAllFoodItems().then((data) => {
+      dispatch({
+        type: actionType.SET_FOOD_ITEMS,
+        foodItems: data,
+      });
+    });
   };
 
   return (

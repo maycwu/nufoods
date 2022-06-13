@@ -43,13 +43,13 @@ export const homeData = [
 ];
 
 export const categories = [
-  {id: 1, name: 'Chicken', urlParamName: 'chicken'},
-  {id: 2, name: 'Curry', urlParamName: 'curry'},
+  {id: 1, name: 'Salad', urlParamName: 'salad'},
+  {id: 2, name: 'Smoothie', urlParamName: 'smoothie'},
   {id: 3, name: 'Rice', urlParamName: 'rice'},
   {id: 4, name: 'Fish', urlParamName: 'fish'},
   {id: 5, name: 'Fruits', urlParamName: 'fruits'},
-  {id: 6, name: 'Desserts', urlParamName: 'desserts'},
-  {id: 7, name: 'Snacks', urlParamName: 'snacks'},
+  {id: 6, name: 'Breakfast', urlParamName: 'breakfast'},
+  {id: 7, name: 'Acai Bowl', urlParamName: 'acaibowl'},
   {id: 8, name: 'Ice creams', urlParamName: 'icecreams'},
-  {id: 9, name: 'Soft drinks', urlParamName: 'drinks'},
+  {id: 9, name: 'Drinks', urlParamName: 'drinks'},
 ]
