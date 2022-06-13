@@ -22,27 +22,29 @@ function homeContainer() {
 
         <p className='text-[2rem] lg:text-[3rem] font-bold tracking-wide text-headingColor'>
           Because you don't need to give up deliciousness for...
-          <br/>
+          <br />
           <span className='text-orange-600 text-[2rem] lg:text-[4rem]'>
-           Healthiness
+            Healthiness
           </span>
         </p>
         <p className='text-base text-textColor text-center md:text-left md:w-[80%]'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio
           assumenda laborum reprehenderit cum explicabo consequuntur iusto quam
           facere, facilis numquam corrupti, corporis rerum iure debitis vero
-          sunt aspernatur repellendus deleniti.
-          Distinctio assumenda laborum reprehenderit cum explicabo consequuntur iusto quam
-          facere, facilis numquam corrupti, corporis rerum iure debitis vero
-          sunt aspernatur repellendus deleniti.
+          sunt aspernatur repellendus deleniti. Distinctio assumenda laborum
+          reprehenderit cum explicabo consequuntur iusto quam facere, facilis
+          numquam corrupti, corporis rerum iure debitis vero sunt aspernatur
+          repellendus deleniti.
         </p>
-        <button
-          type='button'
-          className='bg-gradient-to-br from-orange-400 to-orange-500
-     w-full md:w-auto px-2 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100'
-        >
-          Order Now!
-        </button>
+        <div className='w-full flex items-center justify-center'>
+          <button
+            type='button'
+            className='bg-gradient-to-br from-orange-400 to-orange-500 
+     w-full md:w-auto px-4 py-2 rounded-3xl hover:shadow-lg transition-all ease-in-out duration-100 text-white'
+          >
+            Order Now!
+          </button>
+        </div>
       </div>
       <div className='py-2 flex-1 flex items-center relative'>
         <img
@@ -58,8 +60,12 @@ function homeContainer() {
                 key={n.id}
                 className='lg:w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col drop-shadow-md'
               >
-                <img src={n.imageSrc} alt='I1' className='w-20 -mt-10 lg:w-40 lg:-mt-20 ' />
-                <p className='text-base lg:text-lg font-semibold text-TextColor mt-2 lg:mt-4'>
+                <img
+                  src={n.imageSrc}
+                  alt='I1'
+                  className='w-20 -mt-10 lg:w-40 lg:-mt-20 '
+                />
+                <p className='text-base lg:text-md font-semibold text-TextColor mt-2 lg:mt-4'>
                   {n.name}
                 </p>
                 <p className='text-[12px] lg:text-sm text-lighttextGray font-semibold my-1 lg:my-3'>

@@ -7,7 +7,7 @@ import { getAllFoodItems } from '../src/utils/firebaseFunctions';
 import { actionType } from './context/reducer';
 
 function App() {
-  const [{ foodItems }, dispatch] = useStateValue(); // foodItems is the object state with the list of food, if you want to use it to render it's properties in the return statement, i.e "foodItems.price" etc you must add it in the useStateValue hook (custom hook) 
+  const [{ foodItems }, dispatch] = useStateValue(); // foodItems is the object state with the list of food, if you want to use it to render it's properties in the return statement, i.e "foodItems.price" etc you must add it in the useStateValue hook (custom hook)
 
   const fetchData = async () => {
     await getAllFoodItems().then((data) => {
@@ -19,7 +19,6 @@ function App() {
   };
   useEffect(() => {
     fetchData();
-
   }, []);
   return (
     <AnimatePresence exitBeforeEnter>
