@@ -71,10 +71,10 @@ function homeContainer() {
                 <p className='text-[12px] lg:text-sm text-lighttextGray font-semibold my-1 lg:my-3'>
                   {n.desc}
                 </p>
-                <p className='text-sm font-semibold text-headingColor'>
+                {/* <p className='text-sm font-semibold text-headingColor'>
                   <span className='text-sm text-red-600'>$</span>
                   {n.price}
-                </p>
+                </p> */}
               </div>
             ))}
         </div>

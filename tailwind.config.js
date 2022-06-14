@@ -55,6 +55,7 @@ module.exports = {
         cartItem: '#2e3033',
         cartTotal: '#343739',
         rowBg: 'rgba(255, 131, 0, 0.05)',
+        card: 'rgba(256,256,256,0.8)',
       },
       backgroundImage: {
         homeBackground: "url('../src/img/background.png')",

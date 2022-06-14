@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MdShoppingBasket } from 'react-icons/md';
 import { motion } from 'framer-motion';
+import NotFound from '../img/NotFound.svg';
 
-function RowContainer({ flag, data }) {
-  console.log(data);
+function RowContainer({ flag, data, scrollValue }) {
+  const rowContainer = useRef();
+
+  useEffect(() => {
+    return () => {
+      rowContainer.current.scrollLeft += scrollValue;
+    };
+  }, [scrollValue]);
+
   return (
     <div
-      className={`w-full flex items-center gap-6 my-12 p-6 bg-rowBg rounded-2xl ${
-        flag ? 'overflow-x-scroll scrollbar-none' : 'overflow-x-hidden flex-wrap'
+      ref={rowContainer}
+      className={`w-full flex items-center gap-6 my-12 p-6 bg-rowBg rounded-2xl scroll-smooth ${
+        flag
+          ? 'overflow-x-scroll'
+          : 'overflow-x-hidden flex-wrap justify-center'
       } `}
     >
-      {data &&
+      {data && data.length > 0 ? (
         data.map((item) => (
           <div
             key={item.id}
-            className='w-300 min-w-[300px] md:min-w-[340px] md:w-300 h-auto bg-cardOverlay p-2 backdrop-blur-lg my-12 hover:drop-shadow-xl rounded-2xl'
+            className='w-300 min-w-[300px] md:min-w-[320px] md:w-300 h-[260px] bg-cardOverlay p-2 backdrop-blur-lg my-12 hover:drop-shadow-xl rounded-2xl
+            flex flex-col items-center justify-between'
           >
             <div className='w-full flex items-center justify-between'>
               <motion.img
@@ -43,7 +55,13 @@ function RowContainer({ flag, data }) {
               </div>
             </div>
           </div>
-        ))}
+        ))
+      ) : (
+        <div className='w-auto flex flex-col items-center justify-center '>
+          <img src={NotFound} alt='not found' />
+          <p>Items Not Available</p>
+        </div>
+      )}
     </div>
   );
 }
