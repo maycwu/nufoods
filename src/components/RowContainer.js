@@ -1,16 +1,33 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MdShoppingBasket } from 'react-icons/md';
 import { motion } from 'framer-motion';
 import NotFound from '../img/NotFound.svg';
+import { useStateValue } from '../context/StateProvider';
+import { actionType } from '../context/reducer';
 
 function RowContainer({ flag, data, scrollValue }) {
   const rowContainer = useRef();
+  const [items, setItems] = useState([])
+
+  const [{ cartItems }, dispatch] = useStateValue();
+
+  const addToCart = () => {
+    dispatch({
+      type: actionType.SET_CART_ITEMS,
+      cartItems: items, // by destructuring the array, we are breaking the cartItems array and then appending the new item to the array
+    });
+    localStorage.setItem('cartItems', JSON.stringify(items));
+  };
 
   useEffect(() => {
     return () => {
       rowContainer.current.scrollLeft += scrollValue;
     };
   }, [scrollValue]);
+
+  useEffect(() => {
+   addToCart();
+  }, [items]); //whenever the state is changed (items is changed) we are calling addToCart method
 
   return (
     <div
@@ -37,7 +54,8 @@ function RowContainer({ flag, data, scrollValue }) {
               />
               <motion.div
                 whileTap={{ scale: 0.75 }}
-                className='w-8 h-8 rounded-full bg-red-400 flex items-center justify-center '
+                className='w-8 h-8 rounded-full bg-red-400 flex items-center justify-center'
+                onClick={() => setItems([...cartItems, item])}
               >
                 <MdShoppingBasket className='text-white cursor-pointer hover:shadow-md' />
               </motion.div>
@@ -58,7 +76,7 @@ function RowContainer({ flag, data, scrollValue }) {
         ))
       ) : (
         <div className='w-60 flex flex-col items-center justify-center '>
-          <img src={NotFound} alt='not found'/>
+          <img src={NotFound} alt='not found' />
           <p>Items Not Available</p>
         </div>
       )}

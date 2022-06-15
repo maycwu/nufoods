@@ -8,7 +8,7 @@ import { useStateValue } from '../context/StateProvider';
 import CartContainer from './CartContainer';
 
 function MainContainer() {
-  const [{ foodItems, dispatch }] = useStateValue();
+  const [{ foodItems, cartShow }, dispatch] = useStateValue();
   const [scrollValue, setScrollValue] = useState();
 
   useEffect(() => {
@@ -56,7 +56,7 @@ function MainContainer() {
       </section>
 
       <MenuContainer />
-      <CartContainer />
+      {cartShow && <CartContainer />}
     </div>
   );
 }
