@@ -8,7 +8,6 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { app } from '../firebase.config';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
-import { StateContext } from '../context/StateProvider';
 
 function Header() {
   const firebaseAuth = getAuth(app);
@@ -17,8 +16,9 @@ function Header() {
   //another way of writing it without custom hook
   // const [{ user }, dispatch] = useContext(StateContext)
 
-  const [{ user, cartShow, cartItems }, dispatch] = useStateValue();
+  const [{ user, cartShow}, dispatch] = useStateValue();
   const [isMenu, setIsMenu] = useState(false);
+  const cartItems = JSON.parse(localStorage.getItem('cartItems'))
 
   const login = async () => {
     if (!user) {
