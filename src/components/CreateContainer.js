@@ -192,7 +192,10 @@ function CreateContainer() {
               ))}
           </select>
         </div>
-        <div className='group flex justify-center items-center flex-col border-2 border-dotted border-gray-300 w-full h-225 md:h-420 cursor-pointer rounded-l'>
+        <div
+          className='group flex justify-center items-center flex-col border-2 border-dotted border-gray-300
+         w-full h-225 md:h-420 cursor-pointer rounded-l'
+        >
           {isLoading ? (
             <Loader />
           ) : (
@@ -222,7 +225,8 @@ function CreateContainer() {
                   />
                   <button
                     type='button'
-                    className='absolute bottom-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer outline-none hover:shadow-md duration-500 transition-all ease-in-out'
+                    className='absolute bottom-3 right-3 p-3 rounded-full bg-red-500 text-xl cursor-pointer 
+                    outline-none hover:shadow-md duration-500 transition-all ease-in-out'
                     onClick={deleteImage}
                   >
                     <MdDelete className='text-white' />
@@ -260,7 +264,8 @@ function CreateContainer() {
         <div className='flex items-center w-full'>
           <button
             type='button'
-            className='ml-0 md:ml-auto w-full md:w-auto border-none outline-none bg-emerald-500 px-12 py-2 rounded-lg text-lg text-white font-semibold'
+            className='ml-0 md:ml-auto w-full md:w-auto border-none outline-none bg-emerald-500 px-12 py-2
+             rounded-lg text-lg text-white font-semibold'
             onClick={saveDetails}
           >
             Save

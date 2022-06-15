@@ -5,6 +5,7 @@ import MenuContainer from './MenuContainer';
 import { motion } from 'framer-motion';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { useStateValue } from '../context/StateProvider';
+import CartContainer from './CartContainer';
 
 function MainContainer() {
   const [{ foodItems, dispatch }] = useStateValue();
@@ -21,7 +22,8 @@ function MainContainer() {
         <div className='w-full flex items-center justify-between'>
           <p
             className='text-2xl font-semibold capitalize text-headingColor relative 
-          before:absolute before:rounded-lg before:content before:w-20 before:h-1 before:-bottom-2 before-left-0 before:bg-gradient-to-tr from-orange-300 to-orange-600
+          before:absolute before:rounded-lg before:content before:w-20 before:h-1 before:-bottom-2 before-left-0
+           before:bg-gradient-to-tr from-orange-300 to-orange-600
            transition-all ease-in-out duration-100 '
           >
             Breakfast
@@ -29,14 +31,16 @@ function MainContainer() {
           <div className=' hidden md:flex gap-3 items-center'>
             <motion.div
               whileTap={{ scale: 0.75 }}
-              className='w-8 h-8 rounded-lg bg-orange-200 hover:bg-orange-500  cursor-pointer hover:shadow-lg flex items-center justify-center'
+              className='w-8 h-8 rounded-lg bg-orange-200 hover:bg-orange-500  cursor-pointer hover:shadow-lg
+               flex items-center justify-center'
               onClick={() => setScrollValue(-800)}
             >
               <MdChevronLeft className='text-lg text-white' />
             </motion.div>
             <motion.div
               whileTap={{ scale: 0.75 }}
-              className='w-8 h-8 rounded-lg bg-orange-200 hover:bg-orange-500 cursor-pointer hover:shadow-lg flex items-center justify-center'
+              className='w-8 h-8 rounded-lg bg-orange-200 hover:bg-orange-500 cursor-pointer hover:shadow-lg 
+              flex items-center justify-center'
               onClick={() => setScrollValue(800)}
             >
               <MdChevronRight className='text-lg text-white' />
@@ -52,6 +56,7 @@ function MainContainer() {
       </section>
 
       <MenuContainer />
+      <CartContainer />
     </div>
   );
 }

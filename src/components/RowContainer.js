@@ -57,8 +57,8 @@ function RowContainer({ flag, data, scrollValue }) {
           </div>
         ))
       ) : (
-        <div className='w-auto flex flex-col items-center justify-center '>
-          <img src={NotFound} alt='not found' />
+        <div className='w-60 flex flex-col items-center justify-center '>
+          <img src={NotFound} alt='not found'/>
           <p>Items Not Available</p>
         </div>
       )}
