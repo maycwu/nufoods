@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { IoFastFood } from 'react-icons/io5';
+import { IoFastFoodOutline } from 'react-icons/io5';
 import { categories } from '../utils/data';
 import { motion } from 'framer-motion';
 import RowContainer from './Meals';
@@ -32,21 +32,21 @@ function MenuContainer() {
                 whileTap={{ scale: 0.75 }}
                 key={category.id}
                 className={`group ${
-                  filter === category.urlParamName ? 'bg-cartNumBg' : 'bg-white'
+                  filter === category.urlParamName ? 'bg-orange-400' : 'bg-white'
                 } 
-                w-24 min-w-[94px] h-28 cursor-pointer rounded-lg shadow-lg drop-shadow-xl flex flex-col gap-3 
-                items-center justify-center hover:bg-red-600`}
+                w-28 min-w-[94px] h-28 cursor-pointer rounded-full flex flex-col gap-3 
+                items-center justify-center hover:bg-orange-400 `}
                 onClick={() => setFilter(category.urlParamName)}
               >
                 <div
                   className={`w-10 h-10 rounded-full ${
                     filter === category.urlParamName
                       ? 'bg-white'
-                      : 'bg-cartNumBg'
+                      : 'bg-orange-500'
                   } 
                 group-hover:bg-white flex items-center justify-center`}
                 >
-                  <IoFastFood
+                  <IoFastFoodOutline
                     className={`${
                       filter === category.urlParamName
                         ? 'text-textColor'
@@ -54,6 +54,7 @@ function MenuContainer() {
                     } group-hover:text-textColor text-lg`}
                   />
                 </div>
+
                 <p
                   className={`text-sm ${
                     filter === category.urlParamName

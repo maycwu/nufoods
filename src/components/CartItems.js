@@ -51,7 +51,7 @@ const CartItem = ({ item}) => {
   }, [qty, items]);
 
   return (
-    <div className='w-full p-1 px-2 rounded-lg flex items-center gap-2'>
+    <div className='w-full p-1 px-4 rounded-3xl bg-orange-50 flex items-center gap-2'>
       <img
         src={item.imageUrl}
         className='w-20 h-20 max-w-[60px] rounded-full object-contain'
@@ -62,7 +62,7 @@ const CartItem = ({ item}) => {
       <div className='flex flex-col gap-2'>
         <p className='text-base text-textColor'>{item?.title}</p>
         <p className='text-sm block text-textColor font-semibold'>
-          $ {parseFloat(item?.price) * qty}
+          $ {parseFloat(item.price) * qty}
         </p>
       </div>
 
@@ -70,7 +70,7 @@ const CartItem = ({ item}) => {
       <div className='group flex items-center gap-2 ml-auto cursor-pointer'>
         <motion.div
           whileTap={{ scale: 0.75 }}
-          onClick={() => updateQty('remove', item?.id)}
+          onClick={() => updateQty('remove', item.id)}
         >
           <BiMinus className='text-textColor' />
         </motion.div>
@@ -81,7 +81,7 @@ const CartItem = ({ item}) => {
 
         <motion.div
           whileTap={{ scale: 0.75 }}
-          onClick={() => updateQty('add', item?.id)}
+          onClick={() => updateQty('add', item.id)}
         >
           <BiPlus className='text-textColor' />
         </motion.div>

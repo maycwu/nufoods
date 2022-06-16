@@ -2,10 +2,14 @@ import React from 'react';
 import Delivery from '../img/delivery.png';
 import HeroBg from '../img/heroBg.png';
 import { homeData } from '../utils/data';
+import { motion } from 'framer-motion';
 
 function homeContainer() {
   return (
-    <section className='grid grid-cols-1 md:grid-cols-2 gap-2 w-full' id='home'>
+    <section
+      className='grid grid-cols-1 md:grid-cols-2 gap-2 w-full bg-homeBackground bg-no-repeat p-5 rounded-2xl'
+      id='home'
+    >
       <div className='py-2 flex-1 flex flex-col items-start justify-start gap-6'>
         <div className='flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full'>
           <p className='text-base text-orange-500 font-semibold'>
@@ -53,28 +57,19 @@ function homeContainer() {
           alt='hero-bg'
         />
 
-        <div className='w-[100%] h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-4 flex-wrap'>
+        <div className='w-[100%] h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-16 flex-wrap'>
           {homeData &&
             homeData.map((n) => (
               <div
                 key={n.id}
-                className='lg:w-190 p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex items-center justify-center flex-col drop-shadow-md'
+                className='lg:w-190 p-4 rounded-full flex items-center justify-center flex-col drop-shadow-xl'
               >
-                <img
+                <motion.img
+                  whileHover={{ scale: 1.4 }}
                   src={n.imageSrc}
                   alt='I1'
-                  className='w-20 -mt-10 lg:w-40 lg:-mt-20 '
+                  className='w-24 -mt-10 lg:w-40 lg:-mt-20 '
                 />
-                <p className='text-base lg:text-md font-semibold text-TextColor mt-2 lg:mt-4'>
-                  {n.name}
-                </p>
-                <p className='text-[12px] lg:text-sm text-lighttextGray font-semibold my-1 lg:my-3'>
-                  {n.desc}
-                </p>
-                {/* <p className='text-sm font-semibold text-headingColor'>
-                  <span className='text-sm text-red-600'>$</span>
-                  {n.price}
-                </p> */}
               </div>
             ))}
         </div>

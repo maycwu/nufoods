@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { MdShoppingBasket } from 'react-icons/md';
 import { motion } from 'framer-motion';
-import NotFound from '../img/NotFound.svg';
+import NotFound from '../img/notfound.png';
 import { useStateValue } from '../context/StateProvider';
 import { actionType } from '../context/reducer';
 
@@ -10,7 +9,7 @@ function RowContainer({ flag, data, scrollValue }) {
   const [items, setItems] = useState([]);
 
   const [{ cartItems }, dispatch] = useStateValue();
-  
+
   const updateCart = () => {
     const cartItemsData = JSON.parse(localStorage.getItem('cartItems'));
     dispatch({
@@ -18,7 +17,7 @@ function RowContainer({ flag, data, scrollValue }) {
       cartItems: cartItemsData,
     });
   };
-  
+
   const addToCart = (item) => {
     const arr = JSON.parse(localStorage.getItem('cartItems')) || [];
     arr.push(item);
@@ -65,7 +64,9 @@ function RowContainer({ flag, data, scrollValue }) {
                   updateCart();
                 }}
               >
-                <MdShoppingBasket className='text-white cursor-pointer hover:shadow-md' />
+                <p className='text-white text-xl cursor-pointer'>
+                  +
+                </p>
               </motion.div>
             </div>
             <div className='w-full flex flex-col items-end justify-end'>
@@ -85,7 +86,7 @@ function RowContainer({ flag, data, scrollValue }) {
       ) : (
         <div className='w-60 flex flex-col items-center justify-center '>
           <img src={NotFound} alt='not found' />
-          <p>Items Not Available</p>
+          <p className='text-2xl'>Items Not Available</p>
         </div>
       )}
     </div>
