@@ -7,16 +7,22 @@ import { actionType } from '../context/reducer';
 
 function RowContainer({ flag, data, scrollValue }) {
   const rowContainer = useRef();
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
 
   const [{ cartItems }, dispatch] = useStateValue();
-
-  const addToCart = () => {
+  
+  const updateCart = () => {
+    const cartItemsData = JSON.parse(localStorage.getItem('cartItems'));
     dispatch({
       type: actionType.SET_CART_ITEMS,
-      cartItems: items, // by destructuring the array, we are breaking the cartItems array and then appending the new item to the array
+      cartItems: cartItemsData,
     });
-    localStorage.setItem('cartItems', JSON.stringify(items));
+  };
+  
+  const addToCart = (item) => {
+    const arr = JSON.parse(localStorage.getItem('cartItems')) || [];
+    arr.push(item);
+    localStorage.setItem('cartItems', JSON.stringify(arr));
   };
 
   useEffect(() => {
@@ -25,9 +31,7 @@ function RowContainer({ flag, data, scrollValue }) {
     };
   }, [scrollValue]);
 
-  useEffect(() => {
-   addToCart();
-  }, [items]); //whenever the state is changed (items is changed) we are calling addToCart method
+  useEffect(() => {}, [items]);
 
   return (
     <div
@@ -55,7 +59,11 @@ function RowContainer({ flag, data, scrollValue }) {
               <motion.div
                 whileTap={{ scale: 0.75 }}
                 className='w-8 h-8 rounded-full bg-red-400 flex items-center justify-center'
-                onClick={() => setItems([...cartItems, item])}
+                onClick={() => {
+                  setItems(item);
+                  addToCart(item);
+                  updateCart();
+                }}
               >
                 <MdShoppingBasket className='text-white cursor-pointer hover:shadow-md' />
               </motion.div>

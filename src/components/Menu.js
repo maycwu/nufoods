@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IoFastFood } from 'react-icons/io5';
 import { categories } from '../utils/data';
 import { motion } from 'framer-motion';
-import RowContainer from './RowContainer';
+import RowContainer from './Meals';
 import { useStateValue } from '../context/StateProvider';
 
 function MenuContainer() {
@@ -22,8 +22,10 @@ function MenuContainer() {
         >
           Our Healthy Meals
         </p>
-        <div className='w-full flex items-center justify-start lg:justify-center gap-8 py-6 overflow-x-scroll
-         scrollbar-none'>
+        <div
+          className='w-full flex items-center justify-start lg:justify-center gap-8 py-6 overflow-x-scroll
+         scrollbar-none'
+        >
           {categories &&
             categories.map((category) => (
               <motion.div

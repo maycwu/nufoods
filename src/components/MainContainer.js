@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import HomeContainer from './HomeContainer';
-import RowContainer from './RowContainer';
-import MenuContainer from './MenuContainer';
+import HomeContainer from './Home';
+import RowContainer from './Meals';
+import MenuContainer from './Menu';
 import { motion } from 'framer-motion';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { useStateValue } from '../context/StateProvider';
@@ -26,7 +26,7 @@ function MainContainer() {
            before:bg-gradient-to-tr from-orange-300 to-orange-600
            transition-all ease-in-out duration-100 '
           >
-            Breakfast
+            Our Best Sellers
           </p>
           <div className=' hidden md:flex gap-3 items-center'>
             <motion.div
