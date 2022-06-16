@@ -6,7 +6,7 @@ import { actionType } from '../context/reducer';
 
 let items = [];
 
-const CartItem = ({ item, setFlag, flag }) => {
+const CartItem = ({ item}) => {
   const [{ cartItems }, dispatch] = useStateValue();
   const [qty, setQty] = useState(item.qty);
 
@@ -24,22 +24,21 @@ const CartItem = ({ item, setFlag, flag }) => {
       cartItems.map((item) => {
         if (item.id === id) {
           item.qty += 1;
-          setFlag(flag + 1);
         }
       });
       cartDispatch();
-    } else {
-      // initial state value is one so you need to check if 1 then remove it
+    }     
+    
+    if (action === 'remove') {
+      // initial state value is one so need to check if 1 then remove it
       if (qty === 1) {
         items = cartItems.filter((item) => item.id !== id);
-        setFlag(flag + 1);
         cartDispatch();
       } else {
         setQty(qty - 1);
         cartItems.map((item) => {
           if (item.id === id) {
             item.qty -= 1;
-            setFlag(flag + 1);
           }
         });
         cartDispatch();

@@ -22,6 +22,7 @@ import { getAllFoodItems } from '../utils/firebaseFunctions';
 import { actionType } from '../context/reducer';
 
 function CreateContainer() {
+
   const [title, setTitle] = useState('');
   const [calories, setCalories] = useState('');
   const [price, setPrice] = useState('');
