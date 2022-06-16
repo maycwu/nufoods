@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { IoFastFood } from 'react-icons/io5';
 import { categories } from '../utils/data';
 import { motion } from 'framer-motion';
-import RowContainer from './RowContainer';
+import RowContainer from './Meals';
 import { useStateValue } from '../context/StateProvider';
 
 function MenuContainer() {

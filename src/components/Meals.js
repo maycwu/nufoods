@@ -10,7 +10,7 @@ function RowContainer({ flag, data, scrollValue }) {
   const [items, setItems] = useState([]);
 
   const [{ cartItems }, dispatch] = useStateValue();
-
+  
   const updateCart = () => {
     const cartItemsData = JSON.parse(localStorage.getItem('cartItems'));
     dispatch({
