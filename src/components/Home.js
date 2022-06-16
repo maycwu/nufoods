@@ -57,7 +57,7 @@ function homeContainer() {
           alt='hero-bg'
         />
 
-        <div className='w-[100%] h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-6 lg:gap-16 flex-wrap'>
+        <div className='w-[100%] h-full absolute top-8 left-0 flex items-center justify-center py-6 lg:px-32 gap-4 lg:gap-4 flex-wrap'>
           {homeData &&
             homeData.map((n) => (
               <div
