@@ -9,7 +9,6 @@ import CartItems from "./CartItems";
 
 const CartContainer = () => {
   const [{ cartShow, cartItems, user }, dispatch] = useStateValue();
-  const [flag, setFlag] = useState(1);
   const [total, setTotal] = useState(0);
 
   const showCart = () => {
@@ -24,14 +23,13 @@ const CartContainer = () => {
       return accumulator + item.qty * item.price;
     }, 0);
     setTotal(totalPrice);
-  }, [total, flag]);
+  }, [total]);
 
   const clearCart = () => {
     dispatch({
       type: actionType.SET_CART_ITEMS,
       cartItems: [],
     });
-
     localStorage.setItem("cartItems", JSON.stringify([]));
   };
 
@@ -69,8 +67,6 @@ const CartContainer = () => {
                 <CartItems
                   key={item.id}
                   item={item}
-                  setFlag={setFlag}
-                  flag={flag}
                 />
               ))}
           </div>
