@@ -10,6 +10,7 @@ function RowContainer({ flag, data, scrollValue }) {
 
   const [{ cartItems }, dispatch] = useStateValue();
 
+  // methods
   const updateCart = () => {
     const cartItemsData = JSON.parse(localStorage.getItem('cartItems'));
     dispatch({
@@ -33,7 +34,7 @@ function RowContainer({ flag, data, scrollValue }) {
   useEffect(() => {}, [items]);
 
   return (
-    <div
+    <div id='meals'
       ref={rowContainer}
       className={`w-full flex items-center gap-6 my-12 p-6 bg-rowBg rounded-2xl scroll-smooth ${
         flag
@@ -57,7 +58,7 @@ function RowContainer({ flag, data, scrollValue }) {
               />
               <motion.div
                 whileTap={{ scale: 0.75 }}
-                className='w-8 h-8 rounded-full bg-red-400 flex items-center justify-center'
+                className='w-8 h-8 rounded-full bg-green-600 flex items-center justify-center'
                 onClick={() => {
                   setItems(item);
                   addToCart(item);

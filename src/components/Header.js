@@ -16,9 +16,9 @@ function Header() {
   //another way of writing it without custom hook
   // const [{ user }, dispatch] = useContext(StateContext)
 
-  const [{ user, cartShow}, dispatch] = useStateValue();
+  const [{ user, cartShow }, dispatch] = useStateValue();
   const [isMenu, setIsMenu] = useState(false);
-  const cartItems = JSON.parse(localStorage.getItem('cartItems'))
+  const cartItems = JSON.parse(localStorage.getItem('cartItems'));
 
   const login = async () => {
     if (!user) {
@@ -54,7 +54,10 @@ function Header() {
   };
 
   return (
-    <header className='fixed z-50 w-screen p-5 px-4 md:p-2 md:pl-10 md:pr-16 bg-primary'>
+    <header
+      id='header'
+      className='fixed z-50 w-screen p-5 px-4 md:p-2 md:pl-10 md:pr-16 bg-primary'
+    >
       {/*desktop & tablet*/}
       <div className='hidden md:flex w-full h-full items-center justify-between'>
         <Link to={'/'} className='flex items-center gap-5'>
@@ -129,8 +132,7 @@ function Header() {
                       className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100
                      ease-in-out text-textColor text-base'
                       onClick={() => {
-                        setIsMenu(false)
-               
+                        setIsMenu(false);
                       }}
                       Service
                     >

@@ -146,7 +146,7 @@ function CreateContainer() {
   };
 
   return (
-    <div className='"w-full min-h-screen flex items-center justify-center p-4'>
+    <div id='create' className='"w-full min-h-screen flex items-center justify-center p-4'>
       <div className='w-[90%] md:w[75%] p-4 border border-gray-300 rounded-lg flex flex-col items-center justify-center gap-4 bg-white'>
         {fields && (
           <motion.p
